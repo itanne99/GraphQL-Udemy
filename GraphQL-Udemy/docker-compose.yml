@@ -1,0 +1,14 @@
+﻿version: "3.9"
+
+services:
+  db:
+    container_name: "GraphQL-Postgres"
+    image: postgres
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_NAME=graphQL
+      - POSTGRES_USER=JimmyCricket
+      - POSTGRES_PASSWORD=AppleBombs4152
+    ports:
+      - '5432:5432'
