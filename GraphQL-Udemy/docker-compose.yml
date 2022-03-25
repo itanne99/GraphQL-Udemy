@@ -4,8 +4,6 @@ services:
   db:
     container_name: "GraphQL-Postgres"
     image: postgres
-    volumes:
-      - ./data/db:/var/lib/postgresql/data
     environment:
       - POSTGRES_NAME=graphQL
       - POSTGRES_USER=JimmyCricket
