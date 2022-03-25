@@ -39,12 +39,12 @@ namespace GraphQL_Udemy.Services
 
         public List<Song> GetSongByArtist(int id)
         {
-            return _dbContext.Songs.Where(x => x.Artist.Id == id).ToList();
+            return _dbContext.Songs.Where(x => x.ArtistId == id).ToList();
         }
 
         public List<Song> GetSongByAlbum(int id)
         {
-            return _dbContext.Songs.Where(x => x.Album.Id == id).ToList();
+            return _dbContext.Songs.Where(x => x.AlbumId == id).ToList();
         }
         
         public Song UpdateSong(int id, Song song)
