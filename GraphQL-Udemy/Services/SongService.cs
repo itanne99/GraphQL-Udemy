@@ -37,6 +37,16 @@ namespace GraphQL_Udemy.Services
             return _dbContext.Songs.First(x => x.Name == name);
         }
 
+        public List<Song> GetSongByArtist(int id)
+        {
+            return _dbContext.Songs.Where(x => x.Artist.Id == id).ToList();
+        }
+
+        public List<Song> GetSongByAlbum(int id)
+        {
+            return _dbContext.Songs.Where(x => x.Album.Id == id).ToList();
+        }
+        
         public Song UpdateSong(int id, Song song)
         {
             var songObject = _dbContext.Songs.Find(id);
