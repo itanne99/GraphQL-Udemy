@@ -52,6 +52,36 @@ namespace GraphQL_Udemy
             services.AddTransient<SubMenuMutation>();
             services.AddTransient<ReservationMutation>();
             
+            //Genre Services
+            services.AddTransient<IGenre, GenreService>();
+            services.AddTransient<GenreType>();
+            services.AddTransient<GenreInputType>();
+            services.AddTransient<GenreQuery>();
+            services.AddTransient<GenreMutation>();
+            
+            //Artist Services
+            services.AddTransient<IArtist, ArtistService>();
+            services.AddTransient<ArtistType>();
+            services.AddTransient<ArtistInputType>();
+            services.AddTransient<ArtistQuery>();
+            services.AddTransient<ArtistMutation>();
+            
+            
+            //Album Services
+            services.AddTransient<IAlbum, AlbumService>();
+            services.AddTransient<AlbumType>();
+            services.AddTransient<AlbumInputType>();
+            services.AddTransient<AlbumQuery>();
+            services.AddTransient<AlbumMutation>();
+            
+            
+            //Song Services
+            services.AddTransient<ISong, SongService>();
+            services.AddTransient<SongType>();
+            services.AddTransient<SongInputType>();
+            services.AddTransient<SongQuery>();
+            services.AddTransient<SongMutation>();
+            
             //Root Services
             services.AddTransient<RootQuery>();
             services.AddTransient<RootMutation>();
