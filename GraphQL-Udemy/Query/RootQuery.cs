@@ -6,9 +6,9 @@ namespace GraphQL_Udemy.Query
     {
         public RootQuery()
         {
-            Field<MenuQuery>("menuQuery", resolve: context => new { });
-            Field<SubMenuQuery>("subMenuQuery", resolve: context => new { });
-            Field<ReservationQuery>("reservationQuery", resolve: context => new { });
+            Field<MenuQuery>("menuQuery", resolve: context => new { }); // TODO: REMOVE
+            Field<SubMenuQuery>("subMenuQuery", resolve: context => new { }); // TODO: REMOVE
+            Field<ReservationQuery>("reservationQuery", resolve: context => new { }); // TODO: REMOVE
         }
         
     }

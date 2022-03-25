@@ -10,3 +10,5 @@ namespace GraphQL_Udemy.Interfaces
         Menu AddMenu(Menu menu);
     }
 }
+
+// TODO: REMOVE

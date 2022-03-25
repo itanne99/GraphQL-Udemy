@@ -6,9 +6,9 @@ namespace GraphQL_Udemy.Mutation
     {
         public RootMutation()
         {
-            Field<MenuMutation>("menuMutation", resolve: context => new { });
-            Field<SubMenuMutation>("subMenuMutation", resolve: context => new { });
-            Field<ReservationMutation>("reservationMutation", resolve: context => new { });
+            Field<MenuMutation>("menuMutation", resolve: context => new { }); // TODO: REMOVE
+            Field<SubMenuMutation>("subMenuMutation", resolve: context => new { }); // TODO: REMOVE
+            Field<ReservationMutation>("reservationMutation", resolve: context => new { }); // TODO: REMOVE
         }
     }
 }

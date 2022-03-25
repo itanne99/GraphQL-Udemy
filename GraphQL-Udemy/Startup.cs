@@ -34,6 +34,8 @@ namespace GraphQL_Udemy
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            
+            // TODO: Remove these
             services.AddTransient<IMenu, MenuService>();
             services.AddTransient<ISubMenu, SubMenuService>();
             services.AddTransient<IReservation, ReservationService>();
@@ -46,10 +48,12 @@ namespace GraphQL_Udemy
             services.AddTransient<MenuQuery>();
             services.AddTransient<SubMenuQuery>();
             services.AddTransient<ReservationQuery>();
-            services.AddTransient<RootQuery>();
             services.AddTransient<MenuMutation>();
             services.AddTransient<SubMenuMutation>();
             services.AddTransient<ReservationMutation>();
+            
+            //Root Services
+            services.AddTransient<RootQuery>();
             services.AddTransient<RootMutation>();
             services.AddTransient<ISchema, RootSchema>();
 

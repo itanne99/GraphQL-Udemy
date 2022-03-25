@@ -10,3 +10,5 @@ namespace GraphQL_Udemy.Interfaces
         Reservation AddReservation(Reservation reservation);
     }
 }
+
+// TODO: REMOVE
