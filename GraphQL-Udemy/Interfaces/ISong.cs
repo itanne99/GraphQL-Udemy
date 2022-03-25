@@ -10,6 +10,8 @@ namespace GraphQL_Udemy.Interfaces
 
         //Read
         List<Song> GetSongs();
+        
+        List<Song> GetSongs(int id); // By AlbumID
 
         Song GetSong(int id);
 
