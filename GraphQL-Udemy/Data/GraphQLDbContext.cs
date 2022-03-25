@@ -17,6 +17,14 @@ namespace GraphQL_Udemy.Data
 
         public DbSet<Reservation> Reservations { get; set; } // TODO: REMOVE
 
+        public DbSet<Album> Albums { get; set; }
+
+        public DbSet<Artist> Artists { get; set; }
+
+        public DbSet<Genre> Genres { get; set; }
+
+        public DbSet<Song> Songs { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Menu>() 
@@ -30,6 +38,22 @@ namespace GraphQL_Udemy.Data
             modelBuilder.Entity<Reservation>() 
                 .Property(f => f.Id)
                 .ValueGeneratedOnAdd(); // TODO: REMOVE
+
+            modelBuilder.Entity<Album>()
+                .Property(f => f.Id)
+                .ValueGeneratedOnAdd();
+            
+            modelBuilder.Entity<Genre>()
+                .Property(f => f.Id)
+                .ValueGeneratedOnAdd();
+            
+            modelBuilder.Entity<Artist>()
+                .Property(f => f.Id)
+                .ValueGeneratedOnAdd();
+            
+            modelBuilder.Entity<Song>()
+                .Property(f => f.Id)
+                .ValueGeneratedOnAdd();
         }
     }
 }
