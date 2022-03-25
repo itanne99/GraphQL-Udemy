@@ -1,5 +1,6 @@
 ﻿using System;
 using GraphQL.Utilities;
+using GraphQL_Udemy.Mutation;
 using GraphQL_Udemy.Query;
 
 namespace GraphQL_Udemy.Schema
@@ -9,6 +10,7 @@ namespace GraphQL_Udemy.Schema
         public RootSchema(IServiceProvider serviceProvider) : base(serviceProvider)
         {
             Query = serviceProvider.GetRequiredService<RootQuery>();
+            Mutation = serviceProvider.GetRequiredService<RootMutation>();
         }
     }
 }
