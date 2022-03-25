@@ -26,11 +26,6 @@ namespace GraphQL_Udemy.Services
         {
             return _dbContext.Songs.ToList();
         }
-        
-        public List<Song> GetSongs(int id)
-        {
-            return _dbContext.Songs.Where(x=>x.Album.Id == id).ToList();
-        }
 
         public Song GetSong(int id)
         {
