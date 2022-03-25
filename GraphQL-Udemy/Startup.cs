@@ -34,24 +34,7 @@ namespace GraphQL_Udemy
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            
-            // TODO: Remove these
-            services.AddTransient<IMenu, MenuService>();
-            services.AddTransient<ISubMenu, SubMenuService>();
-            services.AddTransient<IReservation, ReservationService>();
-            services.AddTransient<MenuType>();
-            services.AddTransient<SubMenuType>();
-            services.AddTransient<ReservationType>();
-            services.AddTransient<MenuInputType>();
-            services.AddTransient<SubMenuInputType>();
-            services.AddTransient<ReservationInputType>();
-            services.AddTransient<MenuQuery>();
-            services.AddTransient<SubMenuQuery>();
-            services.AddTransient<ReservationQuery>();
-            services.AddTransient<MenuMutation>();
-            services.AddTransient<SubMenuMutation>();
-            services.AddTransient<ReservationMutation>();
-            
+
             //Genre Services
             services.AddTransient<IGenre, GenreService>();
             services.AddTransient<GenreType>();

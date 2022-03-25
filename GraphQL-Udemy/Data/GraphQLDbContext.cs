@@ -11,12 +11,6 @@ namespace GraphQL_Udemy.Data
             
         }
 
-        public DbSet<Menu> Menus { get; set; } // TODO: REMOVE
-        
-        public DbSet<SubMenu> SubMenus { get; set; } // TODO: REMOVE
-
-        public DbSet<Reservation> Reservations { get; set; } // TODO: REMOVE
-
         public DbSet<Album> Albums { get; set; }
 
         public DbSet<Artist> Artists { get; set; }
@@ -27,18 +21,6 @@ namespace GraphQL_Udemy.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Menu>() 
-                .Property(f => f.Id)
-                .ValueGeneratedOnAdd(); // TODO: REMOVE
-            
-            modelBuilder.Entity<SubMenu>() 
-                .Property(f => f.Id)
-                .ValueGeneratedOnAdd(); // TODO: REMOVE
-            
-            modelBuilder.Entity<Reservation>() 
-                .Property(f => f.Id)
-                .ValueGeneratedOnAdd(); // TODO: REMOVE
-
             modelBuilder.Entity<Album>()
                 .Property(f => f.Id)
                 .ValueGeneratedOnAdd();
