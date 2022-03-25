@@ -23,7 +23,10 @@ namespace GraphQL_Udemy.Query
                 arguments: new QueryArguments(new QueryArgument<StringGraphType> {Name = "name"}),
                 resolve: context => { return albumService.GetAlbum(context.GetArgument<string>("name")); });
             
-            //TODO: Get by Year
+            //Get by Year
+            Field<ListGraphType<AlbumType>>("albumByYear",
+                arguments: new QueryArguments(new QueryArgument<IntGraphType> {Name = "year"}),
+                resolve: context => { return albumService.GetAlbumsByYear(context.GetArgument<int>("year")); });
             
         }
     }

@@ -52,6 +52,11 @@ namespace GraphQL_Udemy.Services
             return _dbContext.Songs.Where(x => x.Album.Name == name).ToList();
         }
 
+        public List<Album> GetAlbumsByYear(int year)
+        {
+            return _dbContext.Albums.Where(x => x.Year == year).ToList();
+        }
+
         public Album UpdateAlbum(int id, Album album)
         {
             var albumObject = _dbContext.Albums.Find(id);

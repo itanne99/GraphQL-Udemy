@@ -19,6 +19,8 @@ namespace GraphQL_Udemy.Interfaces
 
         List<Song> GetSongsFromAlbum(int id);
         List<Song> GetSongsFromAlbum(string name);
+        
+        List<Album> GetAlbumsByYear(int year);
 
         //Update
         Album UpdateAlbum(int id, Album album);
