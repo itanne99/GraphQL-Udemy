@@ -22,7 +22,7 @@ namespace GraphQL_Udemy.Services
 
         public List<SubMenu> GetSubMenus(int menuId)
         {
-            return _dbContext.SubMenus.Where(m => m.Id == menuId).ToList();
+            return _dbContext.SubMenus.Where(m => m.MenuId == menuId).ToList();
         }
 
         public SubMenu AddSubMenu(SubMenu subMenu)
