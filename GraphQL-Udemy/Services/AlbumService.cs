@@ -39,7 +39,7 @@ namespace GraphQL_Udemy.Services
 
         public List<Album> GetAlbumsByArtist(int id)
         {
-            return _dbContext.Albums.Where(x => x.Aritst.Id == id).ToList();
+            return _dbContext.Albums.Where(x => x.ArtistId == id).ToList();
         }
 
         public List<Song> GetSongsFromAlbum(int id)
