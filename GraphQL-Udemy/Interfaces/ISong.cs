@@ -10,11 +10,16 @@ namespace GraphQL_Udemy.Interfaces
 
         //Read
         List<Song> GetSongs();
-        
+
+        Song GetSong(int id);
+
+        Song GetSong(string name);
         
 
         //Update
+        Song UpdateSong(int id, Song song);
 
         //Delete
+        void DeleteSong(int id);
     }
 }
