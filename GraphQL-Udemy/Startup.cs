@@ -28,20 +28,30 @@ namespace GraphQL_Udemy
     {
         public Startup(IConfiguration configuration)
         {
-            Configuration = configuration;
         }
-
-        public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddTransient<IProduct, ProductService>();
-            services.AddTransient<ProductType>();
-            services.AddTransient<ProductQuery>();
-            services.AddTransient<ProductMutation>();
-            services.AddTransient<ISchema, ProductSchema>();
+            services.AddTransient<IMenu, MenuService>();
+            services.AddTransient<ISubMenu, SubMenuService>();
+            services.AddTransient<IReservation, ReservationService>();
+            services.AddTransient<MenuType>();
+            services.AddTransient<SubMenuType>();
+            services.AddTransient<ReservationType>();
+            services.AddTransient<MenuInputType>();
+            services.AddTransient<SubMenuInputType>();
+            services.AddTransient<ReservationInputType>();
+            services.AddTransient<MenuQuery>();
+            services.AddTransient<SubMenuQuery>();
+            services.AddTransient<ReservationQuery>();
+            services.AddTransient<RootQuery>();
+            services.AddTransient<MenuMutation>();
+            services.AddTransient<SubMenuMutation>();
+            services.AddTransient<ReservationMutation>();
+            services.AddTransient<RootMutation>();
+            services.AddTransient<ISchema, RootSchema>();
 
             services.AddGraphQL(options =>
             {
