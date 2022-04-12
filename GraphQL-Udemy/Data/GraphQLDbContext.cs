@@ -1,4 +1,4 @@
-﻿using GraphQL_Udemy.Models;
+using GraphQL_Udemy.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
