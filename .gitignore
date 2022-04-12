@@ -7,5 +7,5 @@
 out
 gen
 bin
+**/data/db
 obj
-db

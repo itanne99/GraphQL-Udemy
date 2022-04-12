@@ -2,13 +2,12 @@
 
 namespace GraphQL_Udemy.Type
 {
-    public class ProductInputType : InputObjectGraphType
+    public class GenreInputType : InputObjectGraphType
     {
-        public ProductInputType()
+        public GenreInputType()
         {
             Field<IntGraphType>("id");
             Field<StringGraphType>("name");
-            Field<FloatGraphType>("price");
         }
     }
 }
