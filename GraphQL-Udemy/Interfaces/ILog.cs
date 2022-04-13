@@ -7,7 +7,7 @@ namespace GraphQL_Udemy.Interfaces
     public interface ILog
     {
         //Create
-        Log CreateLog(Log log);
+        Log CreateLog(string message);
 
         //Read
         List<Log> GetLogs();
