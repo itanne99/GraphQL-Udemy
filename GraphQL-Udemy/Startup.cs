@@ -65,6 +65,11 @@ namespace GraphQL_Udemy
             services.AddTransient<SongQuery>();
             services.AddTransient<SongMutation>();
             
+            //Log Services
+            services.AddTransient<ILog, LogService>();
+            services.AddTransient<LogType>();
+            services.AddTransient<LogQuery>();
+            
             //Root Services
             services.AddTransient<RootQuery>();
             services.AddTransient<RootMutation>();
