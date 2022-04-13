@@ -9,6 +9,16 @@ namespace GraphQL_Udemy.Services
     public class ArtistService : IArtist
     {
         private GraphQLDbContext _dbContext;
+        private ILog _logger;
+
+        private Log NewLog(string message)
+        {
+            var log = new Log
+            {
+                Message = message
+            };
+            return log;
+        }
 
         public ArtistService(GraphQLDbContext dbContext)
         {
