@@ -9,16 +9,6 @@ namespace GraphQL_Udemy.Services
     public class GenreService : IGenre
     {
         private GraphQLDbContext _dbContext;
-        private ILog _logger;
-
-        private Log NewLog(string message)
-        {
-            var log = new Log
-            {
-                Message = message
-            };
-            return log;
-        }
 
         public GenreService(GraphQLDbContext dbContext)
         {
