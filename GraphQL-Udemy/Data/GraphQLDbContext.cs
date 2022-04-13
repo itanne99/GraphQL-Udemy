@@ -1,6 +1,7 @@
 using GraphQL_Udemy.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.Extensions.Logging;
 
 namespace GraphQL_Udemy.Data
 {
@@ -43,5 +44,13 @@ namespace GraphQL_Udemy.Data
                 .Property(f => f.Id)
                 .ValueGeneratedOnAdd();
         }
+        
+        public static readonly ILoggerFactory MyLoggerFactory
+            = LoggerFactory.Create(builder => { builder.AddConsole(); });
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+            => optionsBuilder
+                .UseLoggerFactory(MyLoggerFactory)
+                .UseNpgsql("Host=localhost; Database=graphQL; Username=JimmyCricket; Password=AppleBombs4152");
     }
 }
