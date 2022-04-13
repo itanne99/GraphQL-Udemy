@@ -18,6 +18,7 @@ namespace GraphQL_Udemy.Services
         
         public Log CreateLog(Log log)
         {
+            log.DateTime = DateTime.Now;
             _dbContext.Logs.Add(log);
             _dbContext.SaveChanges();
             return log;
