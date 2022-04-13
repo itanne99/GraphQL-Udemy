@@ -11,6 +11,7 @@ namespace GraphQL_Udemy.Query
             Field<ArtistQuery>("artistQuery", resolve: context => new { });
             Field<AlbumQuery>("albumQuery", resolve: context => new { });
             Field<SongQuery>("songQuery", resolve: context => new { });
+            Field<LogQuery>("logQuery", resolve: context => new { });
         }
         
     }
