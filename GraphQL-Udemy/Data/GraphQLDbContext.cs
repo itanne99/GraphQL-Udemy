@@ -18,6 +18,8 @@ namespace GraphQL_Udemy.Data
         public DbSet<Genre> Genres { get; set; }
 
         public DbSet<Song> Songs { get; set; }
+        
+        public DbSet<Log> Logs { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -34,6 +36,10 @@ namespace GraphQL_Udemy.Data
                 .ValueGeneratedOnAdd();
             
             modelBuilder.Entity<Song>()
+                .Property(f => f.Id)
+                .ValueGeneratedOnAdd();
+            
+            modelBuilder.Entity<Log>()
                 .Property(f => f.Id)
                 .ValueGeneratedOnAdd();
         }
