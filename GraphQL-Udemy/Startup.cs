@@ -14,7 +14,9 @@ using GraphQL_Udemy.Services;
 using GraphQL_Udemy.Type;
 using HotChocolate.AspNetCore;
 using HotChocolate.AspNetCore.Playground;
+using HotChocolate.Types;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -38,7 +40,7 @@ namespace GraphQL_Udemy
         {
             services.AddControllers();
             
-            //Auhtentication
+            //Authentication
             services.AddAuthentication(options =>
             {
                 options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;

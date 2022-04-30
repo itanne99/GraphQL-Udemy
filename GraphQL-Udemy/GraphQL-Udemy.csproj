@@ -9,8 +9,7 @@
       <PackageReference Include="GraphiQL" Version="2.0.0" />
       <PackageReference Include="GraphQL.Client" Version="4.0.2" />
       <PackageReference Include="GraphQL.Server.Transports.AspNetCore.SystemTextJson" Version="4.0.1" />
-      <PackageReference Include="HotChocolate.AspNetCore" Version="13.0.0-preview.19" />
-      <PackageReference Include="HotChocolate.AspNetCore.Authorization" Version="12.8.1" />
+      <PackageReference Include="HotChocolate" Version="13.0.0-preview.19" />
       <PackageReference Include="HotChocolate.AspNetCore.Playground" Version="10.5.5" />
       <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.24" />
       <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.18" />
