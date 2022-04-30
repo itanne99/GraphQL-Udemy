@@ -12,6 +12,9 @@ using GraphQL_Udemy.Query;
 using GraphQL_Udemy.Schema;
 using GraphQL_Udemy.Services;
 using GraphQL_Udemy.Type;
+using HotChocolate.AspNetCore;
+using HotChocolate.AspNetCore.Playground;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -34,6 +37,17 @@ namespace GraphQL_Udemy
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            
+            //Auhtentication
+            services.AddAuthentication(options =>
+            {
+                options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(options =>
+            {
+                options.Authority = "https://dev-19069193.okta.com/oauth2/default";
+                options.Audience = "api://default";
+                options.RequireHttpsMetadata = false; // TODO: May need to remove
+            });
 
             //Genre Services
             services.AddTransient<IGenre, GenreService>();
@@ -89,11 +103,17 @@ namespace GraphQL_Udemy
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UsePlayground(new PlaygroundOptions
+                {
+                    QueryPath = "/api",
+                    Path = "/playground"
+                });
             }
 
             dbContext.Database.EnsureCreated();
-            app.UseGraphiQl("/graphql");
-            app.UseGraphQL<ISchema>();
+            app.UseAuthentication();
+            app.UseGraphQL<ISchema>("/api");
+            //app.UseGraphQL<ISchema>();
         }
     }
 }
